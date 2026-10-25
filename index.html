@@ -37,12 +37,29 @@
   .title { font-size: 32pt; font-weight: bold; text-transform: uppercase; line-height: 1.05; }
   .line { width: 35mm; height: 0.8mm; background: #b08d57; margin: 7mm auto; }
   
-  /* Подзаголовок сделан крупным, как на 3-м слайде */
+  /* Подзаголовок сделан крупным */
   .subtitle { font-size: 18pt; font-weight: bold; } 
   
-  /* Курсив "Высокий сервис" увеличен на 3 пункта (с 12pt до 15pt) */
+  /* Курсив "Высокий сервис" */
   .tag { font-size: 15pt; font-style: italic; color: #555; margin-top: 5mm; line-height: 1.4; }
   
+  /* --- СТИЛЬ ДЛЯ КНОПКИ --- */
+  .btn {
+    display: inline-block;
+    margin-top: 8mm;
+    padding: 4mm 8mm;
+    background-color: #b08d57;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3mm;
+    transition: background 0.3s;
+    border: none;
+  }
+  .btn:hover { background-color: #8c6d3d; }
+
   /* ТАБЛИЦА */
   table { width: 100%; border-collapse: collapse; font-size: 11pt; margin-top: 2mm; table-layout: auto; }
   th, td { border: 0.2mm solid #999; padding: 3mm 2mm; text-align: left; vertical-align: top; }
@@ -71,10 +88,9 @@
   
   .photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
   
-  /* ВАШЕ ФОТО (сдвиг 30% влево) */
   .left-cell img {
     object-fit: cover; 
-    object-position: 100% center; 
+    object-position: 30% center; 
   }
   
   .right-cell img { flex: 1; height: 50%; }
@@ -91,6 +107,10 @@
     <div class="line"></div>
     <div class="subtitle">для конференций и выставок</div>
     <div class="tag">Высокий сервис.<br>Контроль качества Ваших мероприятий.</div>
+    
+    <!-- КНОПКА БРОНИРОВАНИЯ -->
+    <a href="https://t.me/Viola_Service?text=Здравствуйте!%20Хочу%20забронировать%20дату" target="_blank" class="btn">Забронировать дату</a>
+    
   </div>
 
   <div class="panel dark back">
@@ -192,20 +212,16 @@
 <div class="sheet">
   <div class="panel collage">
     <div class="layout-3">
-      
       <div class="photo-cell left-cell">
         <img src="photo1.jpg" alt="Ваше фото">
       </div>
-      
       <div class="photo-cell center-cell">
         <img src="photo2.jpg" alt="Фото 2">
       </div>
-      
       <div class="photo-cell right-cell">
         <img src="photo3.jpg" alt="Фото 3">
         <img src="photo5.jpg" alt="Фото 5">
       </div>
-      
     </div>
   </div>
 </div>
