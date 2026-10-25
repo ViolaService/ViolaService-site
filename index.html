@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Выездной официант</title>
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; color: #222; background: #ccc; }
+  .sheet { width: 297mm; height: 210mm; display: flex; background: #fff; margin: 10mm auto; overflow: hidden; }
+  
+  .panel { width: 99mm; height: 210mm; padding: 14mm 6mm; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+  
+  .dark { background: #1c1c1c; color: #f5f5f5; }
+  .center { text-align: center; align-items: center; }
+  .back { align-items: center; text-align: center; }
+
+  /* Выравнивание заголовков на 1-й и 2-й страницах */
+  .panel.cover,
+  .panel.conferences,
+  .panel.pains,
+  .panel.services,
+  .panel.standards {
+    justify-content: flex-start;
+    padding-top: 40mm;
+  }
+
+  h1 { font-size: 22pt; text-transform: uppercase; line-height: 1.15; margin-bottom: 8mm; }
+  h2 { font-size: 16pt; margin-bottom: 6mm; }
+  
+  h3 { font-size: 15pt; margin-bottom: 2mm; }
+  p { font-size: 14pt; line-height: 1.5; margin-bottom: 5mm; }
+  
+  .num { display: inline-block; width: 7mm; height: 7mm; line-height: 7mm; border-radius: 50%; background: #b08d57; color: #fff; text-align: center; font-size: 11pt; margin-right: 2mm; }
+  
+  .gold { color: #b08d57; }
+  .title { font-size: 32pt; font-weight: bold; text-transform: uppercase; line-height: 1.05; }
+  .line { width: 35mm; height: 0.8mm; background: #b08d57; margin: 7mm auto; }
+  
+  /* Подзаголовок сделан крупным, как на 3-м слайде */
+  .subtitle { font-size: 18pt; font-weight: bold; } 
+  
+  /* Курсив "Высокий сервис" увеличен на 3 пункта (с 12pt до 15pt) */
+  .tag { font-size: 15pt; font-style: italic; color: #555; margin-top: 5mm; line-height: 1.4; }
+  
+  /* ТАБЛИЦА */
+  table { width: 100%; border-collapse: collapse; font-size: 11pt; margin-top: 2mm; table-layout: auto; }
+  th, td { border: 0.2mm solid #999; padding: 3mm 2mm; text-align: left; vertical-align: top; }
+  th { background: #1c1c1c; color: #fff; }
+  
+  th:nth-child(1), td:nth-child(1) { width: 24%; } 
+  th:nth-child(2), td:nth-child(2) { width: 40%; } 
+  th:nth-child(3), td:nth-child(3) { width: 36%; } 
+
+  .price { font-weight: bold; color: #7a5c2e; white-space: nowrap; }
+  
+  .label { display: block; font-size: 11pt; color: #b08d57; text-transform: uppercase; }
+  .value { display: block; font-size: 18pt; font-weight: bold; margin-bottom: 8mm; }
+  .value a { color: #f5f5f5; text-decoration: none; }
+  .qr { width: 40mm; height: 40mm; margin-top: 4mm; background: #fff; padding: 2mm; }
+  .panel-content { display: flex; flex-direction: column; justify-content: flex-start; }
+
+  /* --- ЛИСТ 3 --- */
+  .collage { padding: 0; width: 100%; display: flex; }
+  .layout-3 { display: flex; width: 100%; height: 100%; }
+  .photo-cell { height: 100%; overflow: hidden; }
+  
+  .left-cell { flex: 1.1; background: #1c1c1c; }
+  .center-cell { flex: 1.2; }
+  .right-cell { flex: 1; display: flex; flex-direction: column; }
+  
+  .photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  
+  /* ВАШЕ ФОТО (сдвиг 30% влево) */
+  .left-cell img {
+    object-fit: cover; 
+    object-position: 100% center; 
+  }
+  
+  .right-cell img { flex: 1; height: 50%; }
+
+  @media print { body { background: #fff; } .sheet { margin: 0; page-break-after: always; } }
+</style>
+</head>
+<body>
+
+<!-- ЛИСТ 1 -->
+<div class="sheet">
+  <div class="panel center cover">
+    <div class="title">Выездной<br>официант</div>
+    <div class="line"></div>
+    <div class="subtitle">для конференций и выставок</div>
+    <div class="tag">Высокий сервис.<br>Контроль качества Ваших мероприятий.</div>
+  </div>
+
+  <div class="panel dark back">
+    <h1>Готова взять на себя сервис Вашего мероприятия</h1>
+    <span class="label">Телефон</span>
+    <span class="value">+7 925 16 99 777</span>
+    <span class="label">Telegram</span>
+    <span class="value"><a href="https://t.me/Viola_Service">@Viola_Service</a></span>
+    <img class="qr" src="qr.png" alt="QR-код">
+  </div>
+
+  <div class="panel conferences">
+    <div class="panel-content">
+      <h2>Конференции и выставки</h2>
+      <div>
+        <h3><span class="num">1</span>Пиковые загрузки</h3>
+        <p>Быстро обслуживаю большой поток гостей между докладами.</p>
+      </div>
+      <div>
+        <h3><span class="num">2</span>Кофе-брейки</h3>
+        <p>Быстро и тихо, без задержек и суеты.</p>
+      </div>
+      <div>
+        <h3><span class="num">3</span>VIP-зоны</h3>
+        <p>Персональный комфорт для Ваших важных гостей.</p>
+      </div>
+      <div>
+        <h3><span class="num">4</span>Столики на стендах</h3>
+        <p>Гости получают внимание даже в самый загруженный момент.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЛИСТ 2 -->
+<div class="sheet">
+  <div class="panel pains">
+    <div class="panel-content">
+      <h2>Я закрываю Ваши боли</h2>
+      <div>
+        <h3><span class="num">1</span>Не мешаю</h3>
+        <p>Тихо и незаметно работаю, не отвлекаю спикеров.</p>
+      </div>
+      <div>
+        <h3><span class="num">2</span>Без лишних трат</h3>
+        <p>Вы привозите еду, а я оказываю услуги официанта на высшем уровне.</p>
+      </div>
+      <div>
+        <h3><span class="num">3</span>Готова к форс-мажору</h3>
+        <p>Выйду на замену или найду замену из проверенных профессиональных официантов.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel services">
+    <div class="panel-content">
+      <h2>Услуги и стоимость</h2>
+      <table>
+        <tr><th>Услуга</th><th>Что входит</th><th>Стоимость</th></tr>
+        <tr>
+          <td><b>Кофе-брейк</b></td>
+          <td>Зона до 50 гостей, подача напитков, приготовление бутербродов, контроль чистоты</td>
+          <td class="price">1 000 ₽ в час<br>минимум 5 000 ₽</td>
+        </tr>
+        <tr>
+          <td><b>VIP-зона</b></td>
+          <td>Персональное обслуживание 10–15 гостей</td>
+          <td class="price">1 200 ₽ в час<br>минимум 5 000 ₽</td>
+        </tr>
+        <tr>
+          <td><b>Резерв</b></td>
+          <td>Готовность выйти по звонку</td>
+          <td class="price">1 000 ₽ в час<br>минимум 5 000 ₽</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel standards">
+    <div class="panel-content">
+      <h2>Мой стандарт работы</h2>
+      <div>
+        <h3><span class="num">1</span>Медкнижка</h3>
+        <p>Действующая медицинская книжка.</p>
+      </div>
+      <div>
+        <h3><span class="num">2</span>Дресс-код</h3>
+        <p>Классический чёрный низ, белая рубашка, жилет на выбор, три галстука, собственный фартук, перчатки.</p>
+      </div>
+      <div>
+        <h3><span class="num">3</span>Большой опыт</h3>
+        <p>Более 8 лет в сфере мероприятий.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЛИСТ 3 -->
+<div class="sheet">
+  <div class="panel collage">
+    <div class="layout-3">
+      
+      <div class="photo-cell left-cell">
+        <img src="photo1.jpg" alt="Ваше фото">
+      </div>
+      
+      <div class="photo-cell center-cell">
+        <img src="photo2.jpg" alt="Фото 2">
+      </div>
+      
+      <div class="photo-cell right-cell">
+        <img src="photo3.jpg" alt="Фото 3">
+        <img src="photo5.jpg" alt="Фото 5">
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
